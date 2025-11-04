@@ -391,7 +391,7 @@ public class ClientComms {
 		// This method could concurrently be invoked from many places only allow it
 		// to run once.
 		synchronized (conLock) {
-			if (stoppingComms || closePending || isClosed()) {
+			if (stoppingComms || isClosed()) {
 				return;
 			}
 			stoppingComms = true;
